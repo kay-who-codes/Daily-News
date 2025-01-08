@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Test News</title>
+</head>
+<body>
+    <h1>Latest News for "UK Test"</h1>
+    {% if news_data %}
+        <ul>
+            {% for article in news_data %}
+                <li>
+                    <h2><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h2>
+                    <p>{{ article.description }}</p>
+                    <p><small>Published at: {{ article.publishedAt }}</small></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No news articles found.</p>
+    {% endif %}
+</body>
+</html>
